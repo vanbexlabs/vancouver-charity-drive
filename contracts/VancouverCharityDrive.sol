@@ -12,7 +12,7 @@ contract VancouverCharityDrive is Ownable {
     event PledgeCreated(address indexed pledger, uint256 amount, string companyName);
     event PledgeUpdated(address indexed pledger, uint256 amount, string companyName);
     event PledgeConfirmed(address indexed pledger, uint256 amount, string companyName, string txHash);
-    
+
     struct CompanyInfo {
         bool initialized;
         string name;
@@ -52,17 +52,17 @@ contract VancouverCharityDrive is Ownable {
         pledge.currency = _currency;
         pledge.amount = _amount;
         pledge.charityName = _charityName;
-        return true;        
+        return true;
     }
 
     function confirmPledge(uint _pledgeIndex, string _txHash) public returns(bool) {
         Pledge storage pledge = pledges[msg.sender][_pledgeIndex];
-        require(pledge.initialized == true);
+        require(pledge.initialized == true && pledge.confirmed == false);
         pledge.txHash = _txHash;
         pledge.confirmed = true;
         PledgeConfirmed(msg.sender, pledge.amount, companies[msg.sender].name, _txHash);
         return true;
-    } 
+    }
 
     function getPledge(address _companyAddress, uint _index) public view returns (uint amount, string charityName, string currency, string txHash, bool confirmed) {
         amount = pledges[_companyAddress][_index].amount;
