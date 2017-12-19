@@ -45,7 +45,7 @@ contract VancouverCharityDrive is Ownable {
         return true;
     }
 
-    function createPledge(uint _amount, string _charityName, string _currency) isWhiteListed public returns(bool) {
+    function createPledge(uint _amount, string _charityName, string _currency) public isWhiteListed returns(bool) {
         pledges[msg.sender].push(Pledge(true, _amount, _charityName, _currency, "", false));
         PledgeCreated(msg.sender, _amount, companies[msg.sender].name);
         return true;
@@ -80,5 +80,4 @@ contract VancouverCharityDrive is Ownable {
     function getAllCompanies() public view returns (address[]) {
         return participatingCompanies;
     }
-
 }
