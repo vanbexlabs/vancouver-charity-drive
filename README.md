@@ -2,6 +2,8 @@
 
 This repository holds the smart contract used for holding all of the pledges done during the 2017 Vancouver Blockchain Charity Drive.
 
+
+Contract address: *0x31EFeb0296487dC6AF9B3Be1DD8588E69CFDa4e9*
 ## How to participate
 
 
@@ -40,7 +42,7 @@ In order to confirm a pledge, call the `confirmPledge` function with 2 arguments
 
 At this point, the pledge is confirmed and cannot be changed.
 
-### Questions? 
+### Questions
 Have any questions?
 
 Please contact patrick@vanbex.com
