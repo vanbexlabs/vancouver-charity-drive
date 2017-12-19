@@ -7,7 +7,7 @@ This repository holds the smart contract used for holding all of the pledges don
 
 ### 1. Get whitelisted
 
-To get whitelisted, pleasecContact patrick@vanbex.com. Please include for which company you work for, the Ethereum address that will be used for pledging
+To get whitelisted, please contact patrick@vanbex.com. Please include for which company you work for, the Ethereum address that will be used for pledging
 and a phone number where we can reach you. A short phone call will ensue to validate all details. From there, we will whitelist the address.
 
 ### 2. Create a pledge
