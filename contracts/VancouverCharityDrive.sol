@@ -51,7 +51,7 @@ contract VancouverCharityDrive is Ownable {
         return true;
     }
 
-    function updatePledge(uint _amount, string _charityName, string _currency, uint _pledgeIndex) public returns(bool) {
+    function updatePledge(uint _amount, string _charityName, string _currency, uint _pledgeIndex) public isWhiteListed returns(bool) {
         Pledge storage pledge = pledges[msg.sender][_pledgeIndex];
         require(pledge.initialized == true && pledge.confirmed == false);
         pledge.currency = _currency;
@@ -60,7 +60,7 @@ contract VancouverCharityDrive is Ownable {
         return true;
     }
 
-    function confirmPledge(uint _pledgeIndex, string _txHash) public returns(bool) {
+    function confirmPledge(uint _pledgeIndex, string _txHash) public isWhiteListed returns(bool) {
         Pledge storage pledge = pledges[msg.sender][_pledgeIndex];
         require(pledge.initialized == true && pledge.confirmed == false);
         pledge.txHash = _txHash;
