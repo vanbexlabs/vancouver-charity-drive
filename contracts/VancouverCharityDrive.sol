@@ -1,5 +1,10 @@
 pragma solidity 0.4.18;
 
+/* 
+    Author: Patrick Guay @ Vanbex and Etherparty
+    patrick@vanbex.com
+ */
+
 import "./Ownable.sol";
 
 contract VancouverCharityDrive is Ownable {
